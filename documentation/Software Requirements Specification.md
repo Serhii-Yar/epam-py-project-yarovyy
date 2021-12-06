@@ -1,36 +1,22 @@
-# Musical instruments online shop
+# Department app
 ### Vision
-“Musical instruments online shop” is a web application which allows users to record and review information about clients, their orders, goods available and goods’ suppliers.
+“Department app” is a web application which allows users to record and review information about departments, their empoyees and metrics.
 Application should include:
-•	Storing orders, clients, goods and suppliers in a database;
-•	Displaying list of orders;
-•	Means to update and modify the list of orders;
-•	Displaying list of users;
-•	Means to update and modify the list of users;
-•	Displaying list of goods;
-•	Means to update and modify the list of goods;
-•	Displaying list of suppliers;
-•	Means to update and modify the list of suppliers;
-•	Filtering by date for orders and clients;
-•	Filtering by price or amount for goods;
+•	Storing departments and empoyees in a database;
+•	Displaying list of departments;
+•	Means to update and modify the list of departments;
+•	Displaying list of empoyees;
+•	Means to update and modify the list of empoyees;
+•	Filtering by size for departments;
+•	Filtering by hire date for empoyees;
 •	Filtering by amount for suppliers;
-### 1.Orders
-#### 1.1.Display list of orders
-#### 1.2.Add new order
-#### 1.3.Edit existing order
-#### 1.4.Cancel(delete) existing order
-### 2.Clients
-#### 2.1.Display list of clients
-#### 2.2.Register(add) new client
-#### 2.3.Modify existing client
-#### 2.4.Delete client’s profile
-### 3.Goods
-#### 3.1.Display list of stored goods
-#### 3.2.Add new type of good
-#### 3.3.Edit existing good 
-#### 3.4.Delete existing good
-### 4.Suppliers
-#### 4.1.Display list of suppliers
-#### 4.2.Add new supplier
-#### 4.3.Modify supplier’s profile
-#### 4.4.Delete supplier’s profile
+### 1.Deparments
+#### 1.1.Display list of departments
+#### 1.2.Add new department
+#### 1.3.Edit existing department
+#### 1.4.Remove existing department
+### 2.Employees
+#### 2.1.Display list of employees
+#### 2.2.Register(add) new employee
+#### 2.3.Modify existing employee
+#### 2.4.Delete existing employee
