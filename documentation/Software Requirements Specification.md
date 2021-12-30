@@ -7,13 +7,24 @@ Application should include:
 -	Means to update and modify the list of departments;
 -	Displaying list of empoyees;
 -	Means to update and modify the list of empoyees;
+-	Displaying list of tickets;
+-	Means to update and modify the list of tickets;
 -	Filtering by size for departments;
 -	Filtering by hire date for empoyees;
--	Filtering by amount for suppliers;
+-	Filtering by priority for tickets;
 ### 1.Deparments
 #### 1.1.Display list of departments
 The mode is designed to view the list of departments and information regarding every department, 
 ***Main scenario:***
+- User selects item “Departments” in navbar;
+- Application displays list of departments.
+
+List contains following columns:
+- Number - unique identifier of the deparment
+- Name - name of the department
+- Size - amount of employees in the department
+- Salary - total amount of salaries payed in department
+Aggregate function: Salary = sum(Salary of employee) where Department = current department
 ***Sort by size:***
 #### 1.2.Add new department
 ***Main scenario:***
@@ -27,6 +38,16 @@ The mode is designed to view the list of departments and information regarding e
 ### 2.Employees
 #### 2.1.Display list of employees
 ***Main scenario:***
+- User selects item “Employees” in navbar;
+- Application displays list of employees.
+
+List contains following columns:
+- Number - employee's unique identifier
+- Name - full name of the employee
+- Salary - employee's salary
+- Expirience - time since hire
+- Department - employee's deparment
+Aggregate function: Expirience = current date - hire date
 ***Sort by expirience:***
 #### 2.2.Register(add) new employee
 ***Main scenario:***
