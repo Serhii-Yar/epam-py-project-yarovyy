@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Homepage prototype</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Department App</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="departments.html">Departments</a></li>
+      <li><a href="employees.html">Employees</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+    <div class="panel-group" id="accordion">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#add-employee">Add employee</a>
+            </h3>
+        </div>
+        <div id="add-employee" class="panel-collapse collapse in">
+            <div class="panel-body">
+                <form action="#">
+                    <div class="form-group">
+                        <label for="add-name">Enter employee name</label>
+                        <input type="text" class="form-control" id="add-name">
+                    </div>
+                    <div class="form-group">
+                        <label for="add-birthdate">Enter employee date of birth</label>
+                        <input type="text" class="form-control" id="add-birthdate">
+                    </div>
+                    <div class="form-group">
+                        <label for="add-salary">Enter employee salary</label>
+                        <input type="text" class="form-control" id="add-salary">
+                    </div>
+                    <div class="form-group">
+                        <label for="add-select-department">Select department:</label>
+                        <select class="form-control" id="add-select-department">
+                            <option>Research and Developments</option>
+                            <option>Human Resources</option>
+                            <option>Sales</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-success">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+        <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#edit-employee">Edit employee</a>
+            </h3>
+        </div>
+        <div id="edit-employee" class="panel-collapse collapse in">
+            <div class="panel-body">
+                <form action="#">
+                    <div class="form-group">
+                        <label for="edit-select-employee">Select employee:</label>
+                        <select class="form-control" id="edit-select-employee">
+                            <option>John Doe</option>
+                            <option>Jane Johnson</option>
+                            <option>Bob Stevenson</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-name">Enter employee name</label>
+                        <input type="text" class="form-control" id="edit-name">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-birthdate">Enter employee date of birth</label>
+                        <input type="text" class="form-control" id="edit-birthdate">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-salary">Enter employee salary</label>
+                        <input type="text" class="form-control" id="edit-salary">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-select-department">Select department:</label>
+                        <select class="form-control" id="edit-select-department">
+                            <option>Research and Developments</option>
+                            <option>Human Resources</option>
+                            <option>Sales</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-success">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+        <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#delete-employee">Delete employee</a>
+            </h3>
+        </div>
+        <div id="delete-employee" class="panel-collapse collapse in">
+            <div class="panel-body">
+                <form action="#">
+                    <div class="form-group">
+                        <label for="delete-select-employee">Select employee:</label>
+                        <select class="form-control" id="delete-select-employee">
+                            <option>John Doe</option>
+                            <option>Jane Johnson</option>
+                            <option>Bob Stevenson</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-success">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+
+</body>
+</html>

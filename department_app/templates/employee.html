@@ -1,0 +1,105 @@
+{% extends 'default.html' %}
+{% set active = 'employee' %}
+
+{% block content %}
+<div class="container">
+    <div class="panel-group" id="accordion">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#add-employee">Add employee</a>
+            </h3>
+        </div>
+        <div id="add-employee" class="panel-collapse collapse {{ 'in' if expand == 'add' else '' }}">
+            <div class="panel-body">
+                <form id="add-employee-form" action="#">
+                    <div class="form-group">
+                        <label for="add-name">Enter employee name</label>
+                        <input type="text" class="form-control" id="add-name" placeholder="Name Surname">
+                    </div>
+                    <div class="form-group">
+                        <label for="add-birthdate">Enter employee date of birth</label>
+                        <input type="text" class="form-control" id="add-birthdate" placeholder="YYYY-MM-DD">
+                    </div>
+                    <div class="form-group">
+                        <label for="add-salary">Enter employee salary</label>
+                        <input type="text" class="form-control" id="add-salary" placeholder="1234">
+                    </div>
+                    <div class="form-group">
+                        <label for="add-select-department">Select department:</label>
+                        <select class="form-control" id="add-select-department">
+                            <!--initialized in js-->
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-success">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+        <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#edit-employee">Edit employee</a>
+            </h3>
+        </div>
+        <div id="edit-employee" class="panel-collapse collapse {{ 'in' if expand == 'edit' else '' }}">
+            <div class="panel-body">
+                <form id="edit-employee-form" action="#">
+                    <div class="form-group">
+                        <label for="edit-select-employee">Select employee:</label>
+                        <select class="form-control" id="edit-select-employee">
+                            <!--initialized in js-->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-name">Enter employee name</label>
+                        <input type="text" class="form-control" id="edit-name" placeholder="Name Surname">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-birthdate">Enter employee date of birth</label>
+                        <input type="text" class="form-control" id="edit-birthdate" placeholder="YYYY-MM-DD">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-salary">Enter employee salary</label>
+                        <input type="text" class="form-control" id="edit-salary" placeholder="123">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-select-department">Select department:</label>
+                        <select class="form-control" id="edit-select-department">
+                            <!--initialized in js-->
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-success">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+        <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#delete-employee">Delete employee</a>
+            </h3>
+        </div>
+        <div id="delete-employee" class="panel-collapse collapse {{ 'in' if expand == 'delete' else '' }}">
+            <div class="panel-body">
+                <form id="delete-employee-form" action="#">
+                    <div class="form-group">
+                        <label for="delete-select-employee">Select employee:</label>
+                        <select class="form-control" id="delete-select-employee">
+                            <!--initialized in js-->
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-success">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}
+    <script src="{{ url_for('static', filename='js/employee.js') }}"></script>
+{% endblock %}

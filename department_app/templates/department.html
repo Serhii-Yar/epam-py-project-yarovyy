@@ -1,28 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Homepage prototype</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-</head>
+{% extends 'default.html' %}
+{% set active = 'department' %}
 
-<body>
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">Department App</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="departments.html">Departments</a></li>
-      <li><a href="employees.html">Employees</a></li>
-    </ul>
-  </div>
-</nav>
-
+{% block content %}
 <div class="container">
     <div class="panel-group" id="accordion">
     <div class="panel panel-primary">
@@ -31,12 +10,12 @@
                 <a data-toggle="collapse" data-parent="#accordion" href="#add-department">Add department</a>
             </h3>
         </div>
-        <div id="add-department" class="panel-collapse collapse in">
+        <div id="add-department" class="panel-collapse collapse {{ 'in' if expand == 'add' else '' }}">
             <div class="panel-body">
-                <form action="#">
+                <form id = "add-department-form" action="#">
                     <div class="form-group">
                         <label for="add-name">Enter department name</label>
-                        <input type="text" class="form-control" id="add-name">
+                        <input type="text" class="form-control" id="add-name" placeholder="Administration">
                     </div>
                     <button type="submit" class="btn btn-success">Submit</button>
                 </form>
@@ -50,20 +29,18 @@
                 <a data-toggle="collapse" data-parent="#accordion" href="#edit-department">Edit department</a>
             </h3>
         </div>
-        <div id="edit-department" class="panel-collapse collapse in">
+        <div id="edit-department" class="panel-collapse collapse {{ 'in' if expand == 'edit' else '' }}">
             <div class="panel-body">
-                <form action="#">
+                <form id = "edit-department-form" action="#">
                     <div class="form-group">
                         <label for="edit-select-department">Select department:</label>
                         <select class="form-control" id="edit-select-department">
-                            <option>Research and Developments</option>
-                            <option>Human Resources</option>
-                            <option>Sales</option>
+                            <!--initialized in js-->
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="edit-name">Enter new department name:</label>
-                        <input type="text" class="form-control" id="edit-name">
+                        <input type="text" class="form-control" id="edit-name" placeholder="Administration">
                     </div>
                     <button type="submit" class="btn btn-success">Submit</button>
                 </form>
@@ -77,15 +54,13 @@
                 <a data-toggle="collapse" data-parent="#accordion" href="#delete-department">Delete department</a>
             </h3>
         </div>
-        <div id="delete-department" class="panel-collapse collapse in">
+        <div id="delete-department" class="panel-collapse collapse {{ 'in' if expand == 'delete' else '' }}">
             <div class="panel-body">
-                <form action="#">
+                <form id = "delete-department-form" action="#">
                     <div class="form-group">
                         <label for="delete-select-department">Select department:</label>
                         <select class="form-control" id="delete-select-department">
-                            <option>Research and Developments</option>
-                            <option>Human Resources</option>
-                            <option>Sales</option>
+                            <!--initialized in js-->
                         </select>
                     </div>
                     <button type="submit" class="btn btn-success">Submit</button>
@@ -95,6 +70,8 @@
     </div>
     </div>
 </div>
+{% endblock %}
 
-</body>
-</html>
+{% block script %}
+    <script src="{{ url_for('static', filename='js/department.js') }}"></script>
+{% endblock %}
